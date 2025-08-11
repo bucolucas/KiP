@@ -1,10 +1,11 @@
 ---
+import Base from '../layouts/Base.astro';
 import { listArticles } from '../lib/loadContent.ts';
 const items = listArticles();
 ---
-<html><body>
-    <h1>Verifiable News</h1>
-    <ul>
-        {items.map(i => <li><a href={`/articles/${i.slug}`}>{i.title}</a></li>)}
-    </ul>
-</body></html>
+<Base title="Verifiable News">
+  <h1>Verifiable News</h1>
+  <ul>
+    {items.map((i) => <li><a href={`/articles/${i.slug}`}>{i.title}</a></li>)}
+  </ul>
+</Base>

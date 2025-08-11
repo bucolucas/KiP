@@ -1,23 +1,21 @@
-
-// src/pages/articles/[slug].astro
+import Base from '../../layouts/Base.astro';
 import { listArticles, getArticle } from '../../lib/loadContent.ts';
 
 export async function getStaticPaths() {
   const items = listArticles();
-  return items.map((i) => ({
-    params: { slug: i.slug }
-  }));
+  return items.map((i) => ({ params: { slug: i.slug } }));
 }
 
-const { slug } = Astro.params;
-const a = getArticle(slug as string);
+const slug = String(Astro.params.slug);
+const a = getArticle(slug);
 if (!a) throw new Error(`Article not found for slug: ${slug}`);
 ---
-
-<html><body>
+<Base title={a.frontmatter.title}>
   <h1>{a.frontmatter.title}</h1>
-  <p><em>{a.frontmatter.dek}</em></p>
+  {a.frontmatter.dek && <p><em>{a.frontmatter.dek}</em></p>}
   <article set:html={a.content}></article>
   <hr />
-  <p>Verification and sources: {a.frontmatter.verification_log_ref}</p>
-</body></html>
+  {a.frontmatter.verification_log_ref && (
+    <p>Verification and sources: <code>{a.frontmatter.verification_log_ref}</code></p>
+  )}
+</Base>
