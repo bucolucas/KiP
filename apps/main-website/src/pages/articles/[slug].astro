@@ -1,5 +1,11 @@
 ---
-import { getArticle } from '../../lib/loadContent.ts';
+import { getArticle, listArticles } from '../../lib/loadContent.ts';
+
+export async function getStaticPaths() {
+  const items = listArticles();
+  return items.map((i) => ({ params: { slug: i.slug } }));
+}
+
 const { slug } = Astro.params;
 const a = getArticle(slug as string);
 if (!a) throw new Error('Not found');
