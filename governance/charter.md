@@ -1,0 +1,4 @@
+  - Methodological objectivity: the method is objective, not the journalist.
+  - Human primacy: no publishing without human sign-off.
+  - Radical transparency: public logs, PRs, manifests.
+  - Bias mitigation: diverse sources, audits, corrections policy.

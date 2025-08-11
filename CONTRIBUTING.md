@@ -1,0 +1,5 @@
+  - Use conventional commits (feat, fix, chore, docs, verify, draft, ingest).
+  - Open topic work on feature/topic-<id> branches.
+  - Two human approvals required to merge into main. CODEOWNERS enforced.
+  - All facts must be traceable to primary sources. No speculation.
+  - Accessibility: Provide alt text for images; include transcripts for audio.

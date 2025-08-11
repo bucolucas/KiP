@@ -1,0 +1,9 @@
+
+{
+"platforms": {
+    "mastodon": { "text": "Example Article: a neutral, verified overview. Read: https://yoursite/articles/example-article", "alt_text": "Article title card" },
+    "linkedin": { "text": "New: Example Article. Verified claims, full sources in repo. https://yoursite/articles/example-article" }
+},
+"article_url": "https://yoursite/articles/example-article",
+"scheduled_at": null
+}

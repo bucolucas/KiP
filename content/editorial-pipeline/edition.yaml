@@ -1,0 +1,9 @@
+id: default-edition
+name: Verifiable News (Default)
+locale: en-US
+timezone: America/Los_Angeles
+mission_focus: general
+source_allowlist: [ "semanticscholar.org", "data.gov", "nih.gov", "census.gov" ]
+social_rules:
+  neutral_tone: true
+  include_alt_text: true

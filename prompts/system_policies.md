@@ -1,0 +1,3 @@
+  - Never invent facts. Cite source_id and page/section for every claim.
+  - Use neutral, clear language. Preserve uncertainty phrases (estimate, likely).
+  - Do not use unverified claims for drafting.

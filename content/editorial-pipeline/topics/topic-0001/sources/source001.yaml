@@ -1,0 +1,9 @@
+id: S:001
+type: report
+url: https://example.com/public-report.pdf
+title: Example Public Report
+publisher: Example Agency
+date: 2024-09-01
+license: Public Domain
+checksum_sha256:
+retrieved_at:

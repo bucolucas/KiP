@@ -1,0 +1,20 @@
+  name: Topic Scaffold
+  on:
+    issues:
+      types: [labeled]
+  jobs:
+    scaffold:
+      if: contains(github.event.issue.labels.*.name, 'status:prioritized')
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - name: Create topic branch
+          env:
+            ISSUE_NUMBER: ${{ github.event.issue.number }}
+          run: |
+            BRANCH="feature/topic-${ISSUE_NUMBER}"
+            git checkout -b "$BRANCH"
+            python tools/newsroom-cli/newsroom_cli/cli.py init-topic --id "topic-${ISSUE_NUMBER}" --title "${{ github.event.issue.title }}"
+            git add .
+            git commit -m "feat(topic-${ISSUE_NUMBER}): scaffold topic from issue"
+            git push origin "$BRANCH"

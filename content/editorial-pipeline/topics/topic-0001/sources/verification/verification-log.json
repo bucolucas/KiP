@@ -1,0 +1,13 @@
+{
+"items": [
+    {
+    "claim_id": "C:001",
+    "status": "Verified",
+    "verifier": "Jane Editor",
+    "method": "Checked source S:001 page 5; cross-referenced statistic with dataset link.",
+    "notes": "Matches table 2.",
+    "links": ["https://example.com/public-report.pdf#page=5"],
+    "timestamp": "2025-08-11T00:00:00Z"
+    }
+]
+}

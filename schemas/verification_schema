@@ -1,0 +1,15 @@
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Verification",
+    "type": "object",
+    "required": ["claim_id", "status", "verifier", "method", "timestamp"],
+    "properties": {
+      "claim_id": {"type": "string"},
+      "status": {"type": "string", "enum": ["Verified", "Unverified", "Inaccurate"]},
+      "verifier": {"type": "string"},
+      "method": {"type": "string"},
+      "notes": {"type": "string"},
+      "links": {"type": "array", "items": {"type": "string", "format": "uri"}},
+      "timestamp": {"type": "string", "format": "date-time"}
+    }
+  }

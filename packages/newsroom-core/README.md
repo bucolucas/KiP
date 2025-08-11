@@ -1,0 +1,1 @@
+  Core models and utilities. Import from tools/newsroom-cli.

@@ -1,0 +1,3 @@
+  - Corrections via hotfix/correction-<article-id> branches and PRs.
+  - Visible corrections banner on articles linking to diff.
+  - Timestamped commit notes.

@@ -1,0 +1,13 @@
+---
+import { getArticle } from '../../lib/loadContent.ts';
+const { slug } = Astro.params;
+const a = getArticle(slug as string);
+if (!a) throw new Error('Not found');
+---
+  <html><body>
+    <h1>{a.frontmatter.title}</h1>
+    <p><em>{a.frontmatter.dek}</em></p>
+    <article set:html={a.content}></article>
+    <hr />
+    <p>Verification and sources: {a.frontmatter.verification_log_ref}</p>
+  </body></html>

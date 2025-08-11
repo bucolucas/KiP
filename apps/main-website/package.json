@@ -1,0 +1,13 @@
+{
+"name": "verifiable-news-site",
+"private": true,
+"scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+},
+"dependencies": {
+    "astro": "^4.10.0",
+    "gray-matter": "^4.0.3"
+}
+}

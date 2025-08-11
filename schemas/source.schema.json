@@ -1,0 +1,17 @@
+  {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Source",
+    "type": "object",
+    "required": ["id", "type", "url", "title", "publisher", "retrieved_at"],
+    "properties": {
+      "id": {"type": "string"},
+      "type": {"type": "string", "enum": ["paper", "dataset", "gov_page", "report"]},
+      "url": {"type": "string", "format": "uri"},
+      "title": {"type": "string"},
+      "publisher": {"type": "string"},
+      "date": {"type": "string"},
+      "license": {"type": "string"},
+      "checksum_sha256": {"type": "string"},
+      "retrieved_at": {"type": "string", "format": "date-time"}
+    }
+  }

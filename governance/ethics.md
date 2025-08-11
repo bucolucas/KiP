@@ -1,0 +1,3 @@
+  - Disclosure of AI use in every article.
+  - No AI images to depict real events; illustrative only with C2PA.
+  - Privacy: collect minimal data; no covert tracking.
