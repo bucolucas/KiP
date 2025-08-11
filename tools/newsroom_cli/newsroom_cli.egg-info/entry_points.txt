@@ -1,2 +1,0 @@
-[console_scripts]
-newsroom = newsroom_cli.cli:app
