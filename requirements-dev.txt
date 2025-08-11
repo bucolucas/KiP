@@ -1,0 +1,2 @@
+-e packages/newsroom_core
+-e tools/newsroom_cli

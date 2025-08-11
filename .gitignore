@@ -9,3 +9,6 @@ __pycache__/
 .venv/
 content/editorial-pipeline/**/sources/*.pdf
 content/editorial-pipeline/**/assets/*
+# Ignore egg-info metadata directories created by editable installs/builds
+*.egg-info/
+**/*.egg-info/
