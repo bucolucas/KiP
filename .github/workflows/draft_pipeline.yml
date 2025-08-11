@@ -12,7 +12,7 @@ name: Draft Pipeline
             python-version: '3.11'
         - name: Install CLI
           run: |
-            pip install -e packages/newsroom-core
+            pip install -e packages/newsroom_core
             pip install -e tools/newsroom-cli
         - name: Ingest sources (if new)
           run: python tools/newsroom-cli/newsroom_cli/cli.py ingest --auto

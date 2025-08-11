@@ -13,10 +13,10 @@ jobs:
           python-version: '3.11'
       - name: Install core
         run: |
-          pip install -e packages/newsroom-core
+          pip install -e packages/newsroom_core
           pip install -e tools/newsroom-cli
           pip install jsonschema
       - name: Schema validation
-        run: python packages/newsroom-core/newsroom_core/verify.py --validate-schemas
+        run: python packages/newsroom_core/newsroom_core/verify.py --validate-schemas
       - name: Bias lint
-        run: python packages/newsroom-core/newsroom_core/bias_lint.py --repo .
+        run: python packages/newsroom_core/newsroom_core/bias_lint.py --repo .

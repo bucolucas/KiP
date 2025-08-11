@@ -1,5 +1,5 @@
 [project]
-name = "newsroom-core"
+name = "newsroom_core"
 version = "0.1.0"
 description = "Core library for verifiable newsroom"
 requires-python = ">=3.11"
