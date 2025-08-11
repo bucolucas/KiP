@@ -1,3 +1,4 @@
+---
 import Base from '../../layouts/Base.astro';
 import { listArticles, getArticle } from '../../lib/loadContent.ts';
 
@@ -8,14 +9,17 @@ export async function getStaticPaths() {
 
 const slug = String(Astro.params.slug);
 const a = getArticle(slug);
-if (!a) throw new Error(`Article not found for slug: ${slug}`);
+if (!a) {
+  // Graceful 404 during build if no articles
+  throw new Error(`Article not found for slug: ${slug}`);
+}
 ---
 <Base title={a.frontmatter.title}>
   <h1>{a.frontmatter.title}</h1>
-  {a.frontmatter.dek && <p><em>{a.frontmatter.dek}</em></p>}
+  {a.frontmatter.dek ? <p><em>{a.frontmatter.dek}</em></p> : null}
   <article set:html={a.content}></article>
   <hr />
-  {a.frontmatter.verification_log_ref && (
+  {a.frontmatter.verification_log_ref ? (
     <p>Verification and sources: <code>{a.frontmatter.verification_log_ref}</code></p>
-  )}
+  ) : null}
 </Base>
