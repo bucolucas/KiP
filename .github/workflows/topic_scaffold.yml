@@ -14,7 +14,7 @@ jobs:
         run: |
           BRANCH="feature/topic-${ISSUE_NUMBER}"
           git checkout -b "$BRANCH"
-          python tools/newsroom_cli/newsroom_cli/cli.py init-topic --id "topic-${ISSUE_NUMBER}" --title "${{ github.event.issue.title }}"
+          python tools/newsroom-cli/newsroom-cli/cli.py init-topic --id "topic-${ISSUE_NUMBER}" --title "${{ github.event.issue.title }}"
           git add .
           git commit -m "feat(topic-${ISSUE_NUMBER}): scaffold topic from issue"
           git push origin "$BRANCH"

@@ -3,6 +3,6 @@
   /governance/**                         @your-org/editors
   /prompts/**                            @your-org/editors
   /packages/newsroom_core/**             @your-org/maintainers
-  /tools/newsroom_cli/**                 @your-org/maintainers
+  /tools/newsroom-cli/**                 @your-org/maintainers
   /apps/main-website/**                  @your-org/web
   /.github/**                            @your-org/maintainers

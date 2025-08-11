@@ -1,9 +1,9 @@
 README.md
 cli.py
 pyproject.toml
-newsroom_cli.egg-info/PKG-INFO
-newsroom_cli.egg-info/SOURCES.txt
-newsroom_cli.egg-info/dependency_links.txt
-newsroom_cli.egg-info/entry_points.txt
-newsroom_cli.egg-info/requires.txt
-newsroom_cli.egg-info/top_level.txt
+newsroom-cli.egg-info/PKG-INFO
+newsroom-cli.egg-info/SOURCES.txt
+newsroom-cli.egg-info/dependency_links.txt
+newsroom-cli.egg-info/entry_points.txt
+newsroom-cli.egg-info/requires.txt
+newsroom-cli.egg-info/top_level.txt

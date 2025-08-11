@@ -14,7 +14,7 @@ jobs:
       - name: Install core
         run: |
           pip install -e packages/newsroom_core
-          pip install -e tools/newsroom_cli
+          pip install -e tools/newsroom-cli
           pip install jsonschema
       - name: Schema validation
         run: python packages/newsroom_core/newsroom_core/verify.py --validate-schemas
