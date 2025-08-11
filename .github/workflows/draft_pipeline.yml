@@ -13,16 +13,16 @@ name: Draft Pipeline
         - name: Install CLI
           run: |
             pip install -e packages/newsroom_core
-            pip install -e tools/newsroom-cli
+            pip install -e tools/newsroom_cli
         - name: Ingest sources (if new)
-          run: python tools/newsroom-cli/newsroom-cli/cli.py ingest --auto
+          run: python tools/newsroom_cli/newsroom_cli/cli.py ingest --auto
         - name: Extract claims (propose PR)
           env:
             OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          run: python tools/newsroom-cli/newsroom-cli/cli.py extract --auto
+          run: python tools/newsroom_cli/newsroom_cli/cli.py extract --auto
         - name: Draft article (only if verification exists)
           env:
             OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          run: python tools/newsroom-cli/newsroom-cli/cli.py draft --auto
+          run: python tools/newsroom_cli/newsroom_cli/cli.py draft --auto
         - name: Debias pass
-          run: python tools/newsroom-cli/newsroom-cli/cli.py debias --auto
+          run: python tools/newsroom_cli/newsroom_cli/cli.py debias --auto

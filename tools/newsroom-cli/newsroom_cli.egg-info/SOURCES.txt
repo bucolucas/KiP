@@ -1,9 +1,0 @@
-README.md
-cli.py
-pyproject.toml
-newsroom-cli.egg-info/PKG-INFO
-newsroom-cli.egg-info/SOURCES.txt
-newsroom-cli.egg-info/dependency_links.txt
-newsroom-cli.egg-info/entry_points.txt
-newsroom-cli.egg-info/requires.txt
-newsroom-cli.egg-info/top_level.txt
