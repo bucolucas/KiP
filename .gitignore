@@ -1,11 +1,11 @@
-  .env
-  .DS_Store
-  node_modules/
-  dist/
-  .next/
-  .astro/
-  __pycache__/
-  .pytest_cache/
-  .venv/
-  content/editorial-pipeline/**/sources/*.pdf
-  content/editorial-pipeline/**/assets/*
+.env
+.DS_Store
+node_modules/
+dist/
+.next/
+.astro/
+__pycache__/
+.pytest_cache/
+.venv/
+content/editorial-pipeline/**/sources/*.pdf
+content/editorial-pipeline/**/assets/*

@@ -1,15 +1,15 @@
-  {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "Claim",
-    "type": "object",
-    "required": ["claim_id", "text", "source_id", "source_quote", "page_or_section", "evidence_type"],
-    "properties": {
-      "claim_id": {"type": "string"},
-      "text": {"type": "string"},
-      "source_id": {"type": "string"},
-      "source_quote": {"type": "string"},
-      "page_or_section": {"type": "string"},
-      "evidence_type": {"type": "string", "enum": ["statistic", "finding", "statement", "method"]},
-      "risk_level": {"type": "string", "enum": ["low", "medium", "high"]}
-    }
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Claim",
+  "type": "object",
+  "required": ["claim_id", "text", "source_id", "source_quote", "page_or_section", "evidence_type"],
+  "properties": {
+    "claim_id": {"type": "string"},
+    "text": {"type": "string"},
+    "source_id": {"type": "string"},
+    "source_quote": {"type": "string"},
+    "page_or_section": {"type": "string"},
+    "evidence_type": {"type": "string", "enum": ["statistic", "finding", "statement", "method"]},
+    "risk_level": {"type": "string", "enum": ["low", "medium", "high"]}
   }
+}
