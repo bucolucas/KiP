@@ -1,28 +1,28 @@
 name: Draft Pipeline
-  on:
-    push:
-      branches: [ "feature/topic-**" ]
-  jobs:
-    pipeline:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v4
-        - uses: actions/setup-python@v5
-          with:
-            python-version: '3.11'
-        - name: Install CLI
-          run: |
-            pip install -e packages/newsroom_core
-            pip install -e tools/newsroom_cli
-        - name: Ingest sources (if new)
-          run: python tools/newsroom_cli/newsroom_cli/cli.py ingest --auto
-        - name: Extract claims (propose PR)
-          env:
-            OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          run: python tools/newsroom_cli/newsroom_cli/cli.py extract --auto
-        - name: Draft article (only if verification exists)
-          env:
-            OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          run: python tools/newsroom_cli/newsroom_cli/cli.py draft --auto
-        - name: Debias pass
-          run: python tools/newsroom_cli/newsroom_cli/cli.py debias --auto
+on:
+  push:
+    branches: [ "feature/topic-**" ]
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install CLI
+        run: |
+          pip install -e packages/newsroom_core
+          pip install -e tools/newsroom_cli
+      - name: Ingest sources (if new)
+        run: python -m newsroom_cli.cli ingest --auto
+      - name: Extract claims (propose PR)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python -m newsroom_cli.cli extract --auto
+      - name: Draft article (only if verification exists)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python -m newsroom_cli.cli draft --auto
+      - name: Debias pass
+        run: python -m newsroom_cli.cli debias --auto
