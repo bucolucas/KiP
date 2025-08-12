@@ -1,2 +1,3 @@
--e packages/newsroom_core
+-e packages/newsroom_core[dev]
 -e tools/newsroom_cli
+pytest

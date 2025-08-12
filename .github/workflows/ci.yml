@@ -11,12 +11,15 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install core
+      - name: Install deps
         run: |
-          pip install -e packages/newsroom_core
+          python -m pip install --upgrade pip
+          pip install -e packages/newsroom_core[dev]
           pip install -e tools/newsroom_cli
-          pip install jsonschema
+          pip install jsonschema pytest
       - name: Schema validation
         run: python packages/newsroom_core/newsroom_core/verify.py --validate-schemas
       - name: Bias lint
         run: python packages/newsroom_core/newsroom_core/bias_lint.py --repo .
+      - name: Unit tests
+        run: pytest -q

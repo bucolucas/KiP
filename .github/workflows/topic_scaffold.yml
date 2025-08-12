@@ -8,13 +8,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install CLI
+        run: |
+          pip install -e packages/newsroom_core
+          pip install -e tools/newsroom_cli
       - name: Create topic branch
         env:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
           BRANCH="feature/topic-${ISSUE_NUMBER}"
           git checkout -b "$BRANCH"
-          python tools/newsroom_cli/newsroom_cli/cli.py init-topic --id "topic-${ISSUE_NUMBER}" --title "${{ github.event.issue.title }}"
+          python -m newsroom_cli.cli init-topic --id "topic-${ISSUE_NUMBER}" --title "${{ github.event.issue.title }}"
           git add .
           git commit -m "feat(topic-${ISSUE_NUMBER}): scaffold topic from issue"
           git push origin "$BRANCH"
